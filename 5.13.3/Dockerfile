@@ -15,6 +15,8 @@ RUN \
     useradd -r -M -d $ACTIVEMQ_HOME activemq && \
     chown activemq:activemq /opt/$ACTIVEMQ -R
 
+ADD activemq.xml $ACTIVEMQ_HOME/conf/activemq.xml
+
 USER activemq
 
 WORKDIR $ACTIVEMQ_HOME
